@@ -52,3 +52,8 @@ example:
 
 * add `hystrix-stream` starter and `stream-rabbit` to `rent-service`
 * add rabbitmq endpoint (spring properties) to rent-service in `docker-compose.yml`
+
+## Step 5
+
+* add `sleuth` starter, `zipkin` starter and `sleuth-zipkin` start to `rent-service`
+* add zipkin base url to rent-service in `docker-compose.yml`

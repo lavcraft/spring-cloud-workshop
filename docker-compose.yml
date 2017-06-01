@@ -12,6 +12,7 @@ services:
       SERVICE_NAME: gateway-server
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: gateway-server
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     links:
       - rent-service
       - payment-service
@@ -60,6 +61,7 @@ services:
       SERVICE_NAME: payment-service
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: payment-service
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     depends_on:
       - eureka-server
     healthcheck:
@@ -81,6 +83,7 @@ services:
       SERVICE_NAME: security-service
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: security-service
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     depends_on:
       - eureka-server
     healthcheck:
@@ -102,6 +105,7 @@ services:
       SERVICE_NAME: blockchain-service
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: blockchain-service
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     depends_on:
       - eureka-server
     healthcheck:
@@ -123,6 +127,7 @@ services:
       SERVICE_NAME: insurance-service
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: insurance-service
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     depends_on:
       - eureka-server
     healthcheck:

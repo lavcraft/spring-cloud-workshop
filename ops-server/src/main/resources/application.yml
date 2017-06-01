@@ -1,0 +1,16 @@
+spring:
+  application.name: ops
+  sleuth:
+    enabled: false
+
+server:
+  port: 9411
+
+zipkin:
+  store:
+    type: mem
+
+logging:
+  level.org.springframework.cloud: DEBUG
+
+logging.file: build/zipkin-server.log

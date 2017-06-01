@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew ops-server:dB
+./run up --no-deps -d ops-server
