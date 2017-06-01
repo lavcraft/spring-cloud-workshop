@@ -23,3 +23,7 @@ rebuild script redeploy app automatically
 example:
 
     ./gradlew build && ./run up -d && ./rebuild-rent-service
+
+## Step0
+
+* do nothing. Just launch `./rebuild-all` `./run up`

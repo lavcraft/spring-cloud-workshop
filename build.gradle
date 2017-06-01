@@ -52,9 +52,11 @@ subprojects {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
   }
 
-  task dockerBuild << {
-    exec {
-      commandLine 'docker', 'build', '--force-rm=true', "--tag=${project.name}", '.'
+  task dockerBuild {
+    doLast {
+      exec {
+        commandLine 'docker', 'build', '--force-rm=true', "--tag=${project.name}", '.'
+      }
     }
   }
 
