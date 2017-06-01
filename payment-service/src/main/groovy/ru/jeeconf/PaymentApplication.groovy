@@ -4,6 +4,7 @@ import groovy.util.logging.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.cloud.netflix.feign.EnableFeignClients
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -14,6 +15,7 @@ import java.util.concurrent.ThreadLocalRandom
 @Slf4j
 @RestController
 @EnableFeignClients
+@EnableDiscoveryClient
 @SpringBootApplication
 public class PaymentApplication {
   public static final int DEFAULT_PADDING = 50

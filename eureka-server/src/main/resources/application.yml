@@ -1,0 +1,10 @@
+spring:
+  application.name: eureka-server
+  sleuth:
+    enabled: false
+
+server:
+  port: 8761
+
+logging:
+  level.org.springframework.cloud: DEBUG

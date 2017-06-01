@@ -1,5 +1,10 @@
 #!/bin/bash
 
-./gradlew dB
+./gradlew blockchain-service:dB
+./gradlew insurance-service:dB
+./gradlew payment-service:dB
+./gradlew rent-service:dB
+./gradlew security-service:dB
+./gradlew eureka-server:dB
 
 ./run up -d

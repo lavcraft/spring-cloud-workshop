@@ -15,6 +15,15 @@ services:
     image: payment-service
     ports:
       - "8080"
+    links:
+      - eureka-server
+    environment:
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: payment-service
+      SERVICE_CHECK_HTTP: /health
+      ADVERTISED_HOSTNAME: payment-service
+    depends_on:
+      - eureka-server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 1m30s
@@ -25,6 +34,15 @@ services:
     image: security-service
     ports:
       - "8080"
+    links:
+      - eureka-server
+    environment:
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: security-service
+      SERVICE_CHECK_HTTP: /health
+      ADVERTISED_HOSTNAME: security-service
+    depends_on:
+      - eureka-server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 1m30s
@@ -35,6 +53,15 @@ services:
     image: blockchain-service
     ports:
       - "8080"
+    links:
+      - eureka-server
+    environment:
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: blockchain-service
+      SERVICE_CHECK_HTTP: /health
+      ADVERTISED_HOSTNAME: blockchain-service
+    depends_on:
+      - eureka-server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 1m30s
@@ -45,6 +72,15 @@ services:
     image: insurance-service
     ports:
       - "8080"
+    links:
+      - eureka-server
+    environment:
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: insurance-service
+      SERVICE_CHECK_HTTP: /health
+      ADVERTISED_HOSTNAME: insurance-service
+    depends_on:
+      - eureka-server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 1m30s

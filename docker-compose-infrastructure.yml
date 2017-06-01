@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+  eureka-server:
+    image: eureka-server
+    hostname: eureka
+    ports:
+      - "8761:8761"
+    environment:
+      SERVICE_NAME: eureka-service
+      SERVICE_CHECK_HTTP: /health
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8761/"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3

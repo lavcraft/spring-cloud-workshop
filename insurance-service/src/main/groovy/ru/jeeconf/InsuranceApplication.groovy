@@ -3,12 +3,14 @@ package ru.jeeconf
 import groovy.util.logging.Slf4j
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
 @Slf4j
 @RestController
+@EnableDiscoveryClient
 @SpringBootApplication
 public class InsuranceApplication {
   public static final int DEFAULT_PADDING = 50

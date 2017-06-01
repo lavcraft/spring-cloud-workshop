@@ -27,3 +27,11 @@ example:
 ## Step0
 
 * do nothing. Just launch `./rebuild-all` `./run up`
+
+## Step1
+
+* add @EnableDiscoveryClient to rent-service
+* add eureka client configuration to it
+* fix docker-compose.yml with env, links and dependsOn properties
+
+* then launch again and test /rent method
