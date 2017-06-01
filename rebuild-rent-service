@@ -1,4 +1,4 @@
 #!/bin/bash
 
 ./gradlew rent-service:dB
-./run up -d rent-service
+./run up --no-deps -d rent-service

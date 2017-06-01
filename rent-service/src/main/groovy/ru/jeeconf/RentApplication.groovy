@@ -4,6 +4,7 @@ import groovy.util.logging.Slf4j
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.cloud.netflix.feign.EnableFeignClients
 import org.springframework.context.annotation.Bean
 import org.springframework.web.bind.annotation.RequestMapping
@@ -15,6 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger
 
 @Slf4j
 @EnableFeignClients
+@EnableDiscoveryClient
 @SpringBootApplication
 public class RentApplication {
   public static final int DEFAULT_PADDING = 50

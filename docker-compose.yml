@@ -5,6 +5,15 @@ services:
     image: rent-service
     ports:
       - "8080"
+    links:
+      - eureka-server
+    environment:
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: rent-service
+      SERVICE_CHECK_HTTP: /health
+      ADVERTISED_HOSTNAME: rent-service
+    depends_on:
+      - eureka-server
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
       interval: 1m30s
