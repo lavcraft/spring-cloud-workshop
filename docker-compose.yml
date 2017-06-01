@@ -7,6 +7,7 @@ services:
     ports:
       - "9000:9000"
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: gateway-server
       SERVICE_CHECK_HTTP: /health
@@ -15,6 +16,7 @@ services:
       - rent-service
       - payment-service
       - eureka-server
+      - rabbitmq
     restart: always
     depends_on:
       - eureka-server
@@ -30,6 +32,7 @@ services:
       - "8080"
     links:
       - eureka-server
+      - rabbitmq
     environment:
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: rent-service
@@ -49,7 +52,9 @@ services:
       - "8080"
     links:
       - eureka-server
+      - rabbitmq
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: payment-service
       SERVICE_CHECK_HTTP: /health
@@ -68,7 +73,9 @@ services:
       - "8080"
     links:
       - eureka-server
+      - rabbitmq
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: security-service
       SERVICE_CHECK_HTTP: /health
@@ -87,7 +94,9 @@ services:
       - "8080"
     links:
       - eureka-server
+      - rabbitmq
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: blockchain-service
       SERVICE_CHECK_HTTP: /health
@@ -106,7 +115,9 @@ services:
       - "8080"
     links:
       - eureka-server
+      - rabbitmq
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: insurance-service
       SERVICE_CHECK_HTTP: /health

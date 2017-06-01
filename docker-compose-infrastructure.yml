@@ -14,3 +14,40 @@ services:
       interval: 1m30s
       timeout: 5s
       retries: 3
+
+  turbine-server:
+    image: turbine-server
+    container_name: turbine-server
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      EUREKA_SERV: http://eureka-server:8761/eureka/
+      SERVICE_NAME: turbine-server
+      SERVICE_CHECK_HTTP: /health
+      SPRING_PROFILES_ACTIVE: consul
+      ADVERTISED_HOSTNAME: turbine-server
+    links:
+      - rabbitmq
+    ports:
+      - "9001:9001"
+      - "8989:8989"
+    restart: always
+    depends_on:
+      - eureka-server
+      - rabbitmq
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9001/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

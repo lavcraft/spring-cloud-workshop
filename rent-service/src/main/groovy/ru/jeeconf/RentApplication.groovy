@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient
 import org.springframework.cloud.netflix.feign.EnableFeignClients
+import org.springframework.cloud.netflix.hystrix.EnableHystrix
 import org.springframework.context.annotation.Bean
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -16,6 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger
 
 @Slf4j
 @EnableFeignClients
+@EnableHystrix
 @EnableDiscoveryClient
 @SpringBootApplication
 public class RentApplication {

@@ -1,0 +1,12 @@
+spring:
+  application.name: turbine
+  sleuth:
+    enabled: false
+  rabbitmq:
+    host: ${rabbitmq.host}
+
+server:
+  port: 9001
+
+logging:
+  level.org.springframework.cloud: DEBUG

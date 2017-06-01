@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew turbine-server:dB
+./run up --no-deps -d turbine-server
