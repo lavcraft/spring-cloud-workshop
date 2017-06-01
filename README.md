@@ -47,3 +47,8 @@ example:
 * add `feign.hystrix.enabled` to application.yml
 
 * then rebuild and check hystrix-dashboard at [gateway-server](http://localhost:9000/hystrix)
+
+## Step 4
+
+* add `hystrix-stream` starter and `stream-rabbit` to `rent-service`
+* add rabbitmq endpoint (spring properties) to rent-service in `docker-compose.yml`

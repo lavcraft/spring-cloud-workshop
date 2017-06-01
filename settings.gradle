@@ -9,4 +9,5 @@ include 'insurance-service'
 
 include 'eureka-server'
 include 'gateway-server'
+include 'turbine-server'
 //## end includes ######
