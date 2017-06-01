@@ -40,6 +40,7 @@ services:
       SERVICE_NAME: rent-service
       SERVICE_CHECK_HTTP: /health
       ADVERTISED_HOSTNAME: rent-service
+      SPRING_ZIPKIN_BASE_URL: http://ops-server:9411
     depends_on:
       - eureka-server
     healthcheck:
