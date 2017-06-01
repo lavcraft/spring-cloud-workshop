@@ -34,6 +34,7 @@ services:
       - eureka-server
       - rabbitmq
     environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
       EUREKA_SERV: http://eureka-server:8761/eureka/
       SERVICE_NAME: rent-service
       SERVICE_CHECK_HTTP: /health
