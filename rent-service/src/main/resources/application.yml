@@ -4,3 +4,5 @@ spring:
 
 logging:
   level.org.springframework.cloud: ERROR
+
+feign.hystrix.enabled: true
