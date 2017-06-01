@@ -35,3 +35,7 @@ example:
 * fix docker-compose.yml with env, links and dependsOn properties
 
 * then launch again and test /rent method
+
+## Step2
+
+* add gateway

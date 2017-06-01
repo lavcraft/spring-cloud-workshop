@@ -1,0 +1,17 @@
+zuul.ignoreLocalService: false
+
+eureka:
+ client:
+  registryFetchIntervalSeconds: 5
+  healthcheck:
+   enabled: true
+  serviceUrl:
+   defaultZone: ${EUREKA_SERV:http://127.0.0.1:8762/eureka/}
+ instance:
+  leaseRenewalIntervalInSeconds: 10
+  appname: ${spring.application.name}
+  virtualHostName : ${spring.application.name}
+  hostname: ${ADVERTISED_HOSTNAME}
+  metadataMap:
+   instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  prefer-ip-address: false

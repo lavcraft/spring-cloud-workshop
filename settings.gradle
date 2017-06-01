@@ -8,4 +8,5 @@ include 'blockchain-service'
 include 'insurance-service'
 
 include 'eureka-server'
+include 'gateway-server'
 //## end includes ######

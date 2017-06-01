@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew gateway-server:dB
+./run up --no-deps -d

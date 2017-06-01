@@ -1,0 +1,15 @@
+spring:
+  application.name: gateway
+
+server:
+  port: 9000
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
+
+logging:
+  level:
+    org.springframework.cloud: off
+    org.springframework.web: off
