@@ -39,3 +39,11 @@ example:
 ## Step2
 
 * add gateway
+
+## Step 3
+
+* add @EnableHystrix annotation to rent-service
+* add dependency with hystrix-starter
+* add `feign.hystrix.enabled` to application.yml
+
+* then rebuild and check hystrix-dashboard at [gateway-server](http://localhost:9000/hystrix)
