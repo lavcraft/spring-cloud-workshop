@@ -1,0 +1,9 @@
+rootProject.name = "spring-cloud-workshop"
+
+//## start includes ####
+include 'rent-service'
+include 'payment-service'
+include 'security-service'
+include 'blockchain-service'
+include 'insurance-service'
+//## end includes ######

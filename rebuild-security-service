@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew security-service:dB
+./run up -d security-service

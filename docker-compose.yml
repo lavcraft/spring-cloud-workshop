@@ -1,0 +1,52 @@
+version: '2.1'
+
+services:
+  rent-service:
+    image: rent-service
+    ports:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3
+
+  payment-service:
+    image: payment-service
+    ports:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3
+
+  security-service:
+    image: security-service
+    ports:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3
+
+  blockchain-service:
+    image: blockchain-service
+    ports:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3
+
+  insurance-service:
+    image: insurance-service
+    ports:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 1m30s
+      timeout: 5s
+      retries: 3

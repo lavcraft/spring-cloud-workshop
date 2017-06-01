@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew insurance-service:dB
+./run up -d insurance-service

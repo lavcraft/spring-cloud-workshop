@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: security-service
+
+logging:
+  level.org.springframework.cloud: ERROR

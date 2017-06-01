@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew payment-service:dB
+./run up -d payment-service

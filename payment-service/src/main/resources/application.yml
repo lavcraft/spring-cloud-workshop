@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: payment-service
+
+logging:
+  level.org.springframework.cloud: ERROR

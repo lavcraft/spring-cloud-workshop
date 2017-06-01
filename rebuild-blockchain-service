@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./gradlew blockchain-service:dB
+./run up -d blockchain-service
